@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo_pesquisa.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Minhas Séries Favoritas</h1>
+    </header>
+    <main>
+        <form action="/" method="post">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required><br>
+
+            <label for="genero">Gênero:</label>
+            <input type="text" id="genero" name="genero" required><br>
+
+            <label for="ano">Ano:</label>
+            <input type="text" id="ano" name="ano" required><br>
+
+            <label for="descricao">Descrição:</label><br>
+            <textarea id="descricao" name="descricao" rows="4" required></textarea><br>
+
+            <input type="submit" value="Adicionar Série">
+        </form>
+        <ul class="series-list">
+            {% for serie in series_list %}
+                <li>
+                    <h2>{{ serie.titulo }}</h2>
+                    <p><strong>Gênero:</strong> {{ serie.genero }}</p>
+                    <p><strong>Ano:</strong> {{ serie.ano }}</p>
+                    <p><strong>Descrição:</strong> {{ serie.descricao }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+
+</body>
+</html>
