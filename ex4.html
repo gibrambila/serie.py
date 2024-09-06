@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        var vetor = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+        var vogais = 'aeiouAEIOU';
+        var consoantesCount = 0;
+ 
+        for (var i = 0; i < vetor.length; i++) {
+            if (vogais.indexOf(vetor[i]) === -1) {
+                consoantesCount++;
+            }
+        }
+ 
+        alert('Número de consoantes: ' + consoantesCount);
+    </script>
+</body>
+</html>
