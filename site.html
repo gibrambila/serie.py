@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotógrafo Lucas de Almeida</title>
+    <link rel="stylesheet" href="estili.css">
+</head>
+<body class="CP">
+
+    <h1>Fotógrafo Lucas de Almeida</h1>
+
+    <h2>José Almeida</h2>
+    <p>Fotógrafo de ótima qualidade, as foto ficaram incríveis!!!</p>
+    <button onclick="mostrarImagem()">Ver Imagens do Casamento</button>
+    <div id="imagemCasamento">
+        <img src="img/noivos 1.jpg" alt="Imagem do Casamento" width="600">
+    </div>
+
+    <h2>lucas Tiagoh</h2>
+    <p>Fotógrafo muuito bomm, as foto ficaram incríveis!!! parabéns Lu.</p>
+    <button onclick="mostrarImagem()">Ver Imagens do Casamento</button>
+    <div id="imagemCasamento">
+        <img src="img/noivos2.jpg" alt="Imagem do Casamento" width="600">
+    </div>
+
+    <h2>Nina Bitencourt</h2>
+    <p>Otimo trabalho amigo, as foto ficaram lindas, vou contrata-lo mais veze.</p>
+    <button onclick="mostrarImagem()">Ver Imagens do Casamento</button>
+    <h2>Mafer Moffe Bitencourt</h2>
+    <div id="imagemCasamento">
+        <img src="img/casal 4.jpg" alt="Imagem do Casamento" width="600">
+    </div>
+
+
+    <p>Fotógrafo ótimo!</p>
+    <button onclick="mostrarImagem()">Ver Imagens do Casamento</button>
+    <div id="imagemCasamento">
+        <img src="img/casal 3.jfif" alt="Imagem do Casamento" width="600">
+    </div>
+    
+    <script>
+        
+        function mostrarImagem() {
+            var imagem = document.getElementById("imagemCasamento");
+            if (imagem.style.display === "none") {
+                imagem.style.display = "block";
+            } else {
+                imagem.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
