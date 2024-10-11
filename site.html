@@ -3,53 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotógrafo Lucas de Almeida</title>
-    <link rel="stylesheet" href="estili.css">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
-<body class="CP">
-
-    <h1>Fotógrafo Lucas de Almeida</h1>
-
-    <h2>José Almeida</h2>
-    <p>Fotógrafo de ótima qualidade, as foto ficaram incríveis!!!</p>
-    <button onclick="mostrarImagem()">Ver Imagens do Casamento</button>
-    <div id="imagemCasamento">
-        <img src="img/noivos 1.jpg" alt="Imagem do Casamento" width="600">
+<body>
+    <div class="container">
+        <h1>Calculadora de IMC</h1>
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" required>
+ 
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura" required>
+ 
+        <button id="botaoCalcular">Calcular IMC</button>
+ 
+        <div id="resultado"></div>
+ 
     </div>
-
-    <h2>lucas Tiagoh</h2>
-    <p>Fotógrafo muuito bomm, as foto ficaram incríveis!!! parabéns Lu.</p>
-    <button onclick="mostrarImagem()">Ver Imagens do Casamento</button>
-    <div id="imagemCasamento">
-        <img src="img/noivos2.jpg" alt="Imagem do Casamento" width="600">
-    </div>
-
-    <h2>Nina Bitencourt</h2>
-    <p>Otimo trabalho amigo, as foto ficaram lindas, vou contrata-lo mais veze.</p>
-    <button onclick="mostrarImagem()">Ver Imagens do Casamento</button>
-    <h2>Mafer Moffe Bitencourt</h2>
-    <div id="imagemCasamento">
-        <img src="img/casal 4.jpg" alt="Imagem do Casamento" width="600">
-    </div>
-
-
-    <p>Fotógrafo ótimo!</p>
-    <button onclick="mostrarImagem()">Ver Imagens do Casamento</button>
-    <div id="imagemCasamento">
-        <img src="img/casal 3.jfif" alt="Imagem do Casamento" width="600">
-    </div>
-    
+ 
     <script>
-        
-        function mostrarImagem() {
-            var imagem = document.getElementById("imagemCasamento");
-            if (imagem.style.display === "none") {
-                imagem.style.display = "block";
-            } else {
-                imagem.style.display = "none";
+        document.getElementById("botaoCalcular").addEventListener('click', function() {
+            var peso = parseFloat(document.getElementById("peso").value);
+            var altura = parseFloat(document.getElementById("altura").value);
+            if (!peso || !altura) {
+                alert("Por favor, preencha todos os campos.");
+                return;
             }
-        }
+            var imc = peso / (altura * altura);
+            var classificacao = imc < 18.5 ? 'Abaixo do peso' :
+                                imc < 24.9 ? 'Peso normal' :
+                                imc < 29.9 ? 'Sobrepeso' : 'Obesidade';
+            document.getElementById('resultado').textContent = `Seu IMC é ${imc.toFixed(2)}: ${classificacao}`;
+        });
     </script>
-
 </body>
 </html>
