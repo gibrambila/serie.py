@@ -1,0 +1,91 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height:48px;
+}
+.h1 {
+    padding-top: 270px;
+  padding-left: 20px;
+  font-size: 3em;
+  text-shadow: 1px 1px 2px #333;
+  color: white;
+  font-weight: 800;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+header {
+     background-color: #0598a2;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.botao {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    background-color:  white;
+    color:  #0598a2;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+}
+
+
+.lista {
+    font-weight: 600;
+  padding: 8px 25px;
+  background-color: #ffbd59;
+  border-radius: 6px;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove os espaçamentos entre bordas */
+    margin: 20px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Cabeçalho da tabela */
+table tr:first-child {
+    background-color: #0598a2; /* Cor de fundo do cabeçalho */
+    color: black; /* Cor do texto do cabeçalho */
+    font-weight: bold;
+}
+
+table td, table th {
+    border: 1px solid #ccc; /* Borda entre células */
+    padding: 10px 15px; /* Espaçamento interno das células */
+}
+
+/* Linhas alternadas */
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Cor de fundo das linhas pares */
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff; /* Cor de fundo das linhas ímpares */
+}
+
+
+

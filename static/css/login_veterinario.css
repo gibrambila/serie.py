@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    background-color: #0598a2; /* Cor principal */
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-image {
+    max-width: 200px; /* Tamanho da imagem */
+    height: auto;
+}
+
+/* Contêiner de login */
+.login-container {
+    background: #ffffff; /* Branco */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    margin-top: 20px;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #004d4d; /* Verde água escuro */
+}
+
+/* Mensagem de erro */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Labels e campos de entrada */
+.login-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botão de login */
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #0598a2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-login:hover {
+    background-color: #047982;
+}
+
+/* Botão de cadastro */
+.btn-cadastrar {
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    color: #0598a2;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #0598a2;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+
+

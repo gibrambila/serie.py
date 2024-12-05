@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Veterinário</title>
+    <link rel="stylesheet" href="/static/css/login_veterinario.css">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='img/img.dogdodoi.png') }}" alt="Logo Dog Dodói" class="header-image">
+    </header>
+    <div class="login-container">
+        <h1>Acesse sua Conta</h1>
+        <form method="post" action="{{ url_for('agendamentos') }}">
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit" class="btn-login">Entrar</button>
+        </form>
+
+    </div>
+
+</body>
+</html>

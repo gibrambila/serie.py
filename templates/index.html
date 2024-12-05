@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Veterinária</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+     <header class="bc-green d-flex" >
+            <div class="logo">
+                <img class="logo" src="static/img/img.dogdodoi.png" alt="Logo da Clínica Veterinária">
+
+            </div>
+            <div class="btn-cbclho" >
+                <a href="{{ url_for('login') }}" class="menu" >FAZER LOGIN</a>
+            </div>
+
+    </header>
+
+
+    <section class="bc-img" >
+        <h1 class="tit" >O MELHOR PARA O SEU<br>
+        PET ESTÁ AQUI!</h1>
+    </section>
+
+
+    <section class="d-flex bc-green " >
+
+        <div class="d-flex center" style="
+            margin-left: 180px;
+            gap: 23px;
+            margin-bottom: -47px;
+            padding-top: 23px;
+            ">
+
+            <div class="quadrado d-colun ">
+                <img class="img-div" src="static/img/1.png.png"><br>
+                <p>Atendimento Clínico</p>
+            </div>
+
+            <div class="quadrado d-colun  ">
+                <img class="img-div" src="static/img/2.png"><br>
+                <p>Vacinação e <br>Prevenção de Doenças</p>
+            </div>
+
+            <div class="quadrado d-colun ">
+                <img class="img-div" src="static/img/3.png"><br>
+                <p>Consultas e Diagnósticos</p>
+            </div>
+
+            <div class="quadrado d-colun ">
+                <img  class="img-div" src="static/img/4.png"><br>
+
+                <p>Cirurgias Veterinárias</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Sobre Nós -->
+    <section id="about" class="about d-flex">
+        <div>
+            <img class="img2" src="static/img/Design sem nome (3).png">
+        </div>
+        <div class="circulo" >
+            <img src="static/img/Design sem nome (5).png">
+        </div>
+
+        <div class="container">
+            <h2 class="tit1" >Sobre Nós</h2>
+            <p class="p2" >
+                Na Dog Dodói, nossa missão vai além de tratar doenças: queremos promover a saúde e o bem-estar dos animais e fortalecer o vínculo entre eles e seus tutores. Nossa equipe é composta por veterinários experientes, que trabalham com dedicação, amor e respeito aos nossos pacientes.
+                Além disso, buscamos constantemente nos atualizar sobre as inovações na área veterinária para oferecer os tratamentos mais eficazes e seguros. Valorizamos a confiança que nossos clientes depositam em nós e trabalhamos diariamente para garantir um atendimento humanizado, ético e transparente.
+                Seja para consultas de rotina, atendimento emergencial ou orientações sobre os cuidados diários do seu pet, você pode contar com a Dog Dodói. Cuidar dos seus animais é a nossa paixão!
+            </p>
+        </div>
+    </section>
+
+
+
+    <section class="section-agendamento">
+        <h2 class="tit2">Agende uma consulta!</h2>
+        <form action="" method="POST">
+            <div class="agendamento">
+                <label>Seu Nome:</label>
+                <input name="nome" type="text" />
+                <label>E-mail</label>
+                <input name="email" type="email"/>
+                <label> Telefone</label>
+                <input name="telefone" type="number"/>
+                <label>Horário</label>
+                <input name="horario" type="time"/>
+                <label>Observações</label>
+                <input name="observacoes" type="text">
+
+                <button type="submit" class="botao">Cadastrar Cliente</button>
+                <h2>Cliente cadastrado!</h2>
+            </div>
+
+
+        </form>
+    </section>
+
+
+    <!-- Serviços -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="service-list">
+                <div class="service">
+                    <h3>Consultas</h3>
+                    <p>Atendimento veterinário completo para cães, gatos e outros animais.</p>
+                </div>
+                <div class="service">
+                    <h3>Vacinação</h3>
+                    <p>Vacinas essenciais para garantir a saúde e imunidade do seu pet.</p>
+                </div>
+                <div class="service">
+                    <h3>Exames</h3>
+                    <p>Diagnósticos precisos com equipamentos modernos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p>Envie-nos uma mensagem ou ligue para agendar um atendimento.</p>
+            <div class="contact-info">
+                <p><strong>Email:</strong> contato@vetcare.com.br</p>
+                <p><strong>Telefone:</strong> (61) 99891-6588</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 VetCare - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
