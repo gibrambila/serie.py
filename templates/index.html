@@ -18,7 +18,7 @@
 
             </div>
             <div class="btn-cbclho" >
-                <a href="{{ url_for('login') }}" class="menu" >FAZER LOGIN</a>
+                <a href="{{ url_for('abrir_tela_login') }}" class="menu" >FAZER LOGIN</a>
             </div>
 
     </header>
@@ -87,7 +87,7 @@
 
     <section class="section-agendamento">
         <h2 class="tit2">Agende uma consulta!</h2>
-        <form action="" method="POST">
+        <form action="{{ url_for('agendamentos') }}" method="post">
             <div class="agendamento">
                 <label>Seu Nome:</label>
                 <input name="nome" type="text" />
