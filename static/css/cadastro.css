@@ -29,7 +29,6 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 350px;
     margin-top: 20px;
 }
 
@@ -92,3 +91,19 @@ header {
 
 
 
+@media (max-width: 320px){
+    width: 100%;
+    background-color: #0598a2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 20px;
+}

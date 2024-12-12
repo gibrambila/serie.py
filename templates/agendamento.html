@@ -4,37 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Livros</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='lista_agendamento.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lista_agendamento.css') }}">
 </head>
 <body>
-<header>
-        <h1>Lista de agendamentos</h1>
-
-    </header>
     <main>
+        <div class="h2"></div>
         <h2>Todos os agendamentos</h2>
-        <table>
+        <div class="mobile">
+            <table>
             <thead>
                 <tr>
                     <th>NOME</th>
                     <th>EMAIL</th>
                     <th>TELEFONE</th>
                     <th>HORARIO</th>
-                     <th>OBSERVAÇÃO</th>
-                     <th>AÇÕES</th>
+                    <th>OBSERVAÇÃO</th>
+                    <th>AÇÕES</th>
                 </tr>
             </thead>
             <tbody>
                 {% for item in agendamentos %}
                 <tr>
-                    <td>{{ item[0] }}</td>
                     <td>{{ item[1] }}</td>
                     <td>{{ item[2] }}</td>
                     <td>{{ item[3] }}</td>
+                    <td>{{ item[4] }}</td>
+                    <td>{{ item[5] }}</td>
+                    <td><a href="{{ url_for('abrir_editar', id=item[0]) }}">Editar</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+        </div>
     </main>
 </body>
 </html>

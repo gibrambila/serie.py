@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-br" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/editar.css') }}">
+
+</head>
+<body>
+    {% for dado in info_user %}
+        <form action="{{ url_for('editar', id=dado[0]) }}" method="post">
+            <div class="agendamento">
+                <label>Seu Nome:</label>
+                <input name="nome" type="text" value="{{ dado[1] }}"/>
+                <label>E-mail</label>
+                <input name="email" type="email" value="{{ dado[2] }}"/>
+                <label> Telefone</label>
+                <input name="telefone" type="number" value="{{ dado[3] }}"/>
+                <label>Horário</label>
+                <input name="horario" type="time" value="{{ dado[4] }}"/>
+                <label>Observações</label>
+                <input name="observacoes" type="text" value="{{ dado[5] }}">
+
+                <button type="submit" class="botao">Salvar</button>
+                <h2>Cliente cadastrado!</h2>
+            </div>
+        </form>
+    {% endfor %}
+</body>
+</html>

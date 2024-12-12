@@ -19,16 +19,66 @@ con = fdb.connect( host=host, database=database, user=user, password=password )
 def index():  # put application's code here
     return render_template('index.html')
 
-@app.route('/agendamentos', methods=['POST'])
-def agendamentos():
+@app.route('/abrir_editar/<int:id>')
+def abrir_editar(id):
+
+    cursor = con.cursor()
+
+    cursor.execute('SELECT * FROM AGENDAMENTO WHERE ID_AGENDAMENTO = ?', (id,))
+
+    info_user = cursor.fetchall()
+
+    return render_template('editar.html', info_user=info_user)
+
+@app.route('/agendamento')
+def agendamento():
+
+    cursor = con.cursor()
+
+    cursor.execute("SELECT * FROM agendamento")
+
+    agendamentos = cursor.fetchall()
+
+    return render_template('agendamento.html', agendamentos=agendamentos)
+
+
+@app.route('/editar/<int:id>', methods=['POST'])
+def editar(id):
+    # Recebe os dados do formulário
     nome = request.form['nome']
     email = request.form['email']
     telefone = request.form['telefone']
     horario = request.form['horario']
     observacoes = request.form['observacoes']
 
+    cursor = con.cursor()
 
-    # Criando o cursor
+    try:
+        cursor.execute('''
+            UPDATE AGENDAMENTO
+            SET NOME = ?, EMAIL = ?, TELEFONE = ?, HORARIO = ?, OBSERVACOES = ?
+            WHERE ID_AGENDAMENTO = ?
+        ''', (nome, email, telefone, horario, observacoes, id))
+
+        con.commit()
+
+    except Exception as e:
+        con.rollback()
+        print(f"Erro ao atualizar agendamento: {e}")
+    finally:
+        cursor.close()
+
+    return redirect(url_for('agendamento'))
+
+
+@app.route('/agendar_consulta', methods=['POST'])
+def agendar_consulta():
+    nome = request.form['nome']
+    email = request.form['email']
+    telefone = request.form['telefone']
+    horario = request.form['horario']
+    observacoes = request.form['observacoes']
+
     cursor = con.cursor()
 
     try:
@@ -50,67 +100,59 @@ def agendamentos():
     #buscar agendamentos
     # Rota para exibir a lista de livros em um layout HTML
 
-@app.route('/abrir_tela_cadastro')
-def abrir_tela_cadastro():  # put application's code here
-    return render_template('cadastro.html')
-
 @app.route('/cadastro', methods=['POST'])
 def cadastro():
     nome = request.form['nome']
     email = request.form['email']
     senha = request.form['password']
 
-
-    # Criando o cursor
     cursor = con.cursor()
 
     try:
-        # Verificar se o livro já existe
-        cursor.execute("SELECT 1 FROM veterinario WHERE nome  = ? AND email = ? AND senha = ?", (nome, email, senha,))
-        if cursor.fetchone():  # Se existir algum registro
-            flash("Erro: cadastro já realizado.", "error")
-            return redirect(url_for('novo'))
+        cursor.execute("SELECT 1 FROM veterinario WHERE email = ?", (email,))
+        if cursor.fetchone():
+            flash("Cadastro já realizado.", "error")
+            return redirect(url_for('abrir_tela_cadastro'))
 
-        # Inserir o novo livro (sem capturar o ID)
         cursor.execute("INSERT INTO veterinario (nome, email, senha) VALUES (?, ?, ?)",
                        (nome, email, senha))
         con.commit()
     finally:
-        # Fechar o cursor manualmente, mesmo que haja erro
         cursor.close()
+
     flash("Conta cadastrada com sucesso!", "success")
-    return redirect(url_for('index'))
+    return redirect(url_for('abrir_tela_login'))
 
 @app.route('/abrir_tela_login')
 def abrir_tela_login():  # put application's code here
     return render_template('login_veterinario.html')
 
+@app.route('/abrir_tela_cadastro')
+def abrir_tela_cadastro():  # put application's code here
+    return render_template('cadastro.html')
+
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     try:
-        email = 'giovana@gmail.com'
-        senha = '5555'
+        email = request.form['email']
+        senha = request.form['password']
 
-        # Criando o cursor
         cursor = con.cursor()
-        # Verificar se o livro já existe
-        cursor.execute("SELECT 1 FROM veterinario WHERE nome  = ? AND senha = ?", (email, senha,))
-        if cursor.fetchone():  # Se existir algum registro
-            flash("Erro: O email não existe", "error")
-            return redirect(url_for('login'))
 
-    # Inserir o novo livro (sem capturar o ID)
+        if email == '' or senha == '':
+            return redirect(url_for('abrir_tela_login'))
+
+        cursor.execute("SELECT 1 FROM veterinario WHERE email  = ? AND senha = ?", (email, senha,))
+        if not cursor.fetchone():
+            flash("O email ou a senha estão incorretos.", "error")
+            return redirect(url_for('abrir_tela_login'))
+
         con.commit()
     finally:
-    # Fechar o cursor manualmente, mesmo que haja erro
         cursor.close()
-    flash("Conta cadastrada com sucesso!", "success")
-    return redirect('login')
-
-
-
-
+    flash("Login realizado com sucesso!", "success")
+    return redirect(url_for('agendamento'))
 
 
 

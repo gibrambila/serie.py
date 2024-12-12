@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilo do formulário */
+.agendamento {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Estilo dos inputs */
+.agendamento input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #0598a2;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Foco nos inputs */
+.agendamento input:focus {
+    border-color: var(--cor-principal);
+    outline: none;
+}
+
+/* Botão */
+.botao {
+    width: 100%;
+    padding: 12px;
+    background-color: #0598a2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover no botão */
+.botao:hover {
+    background-color: var(--cor-botao-hover);
+}
+
+/* Mensagem de sucesso */
+h2 {
+    text-align: center;
+    color: var(--cor-principal);
+}
+
+@media (max-width: 320px){
+    .agendamento {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     width: auto;
+    max-width: 500px;
+}
+}

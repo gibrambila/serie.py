@@ -24,11 +24,10 @@
     </header>
 
 
-    <section class="bc-img" >
+<section class="bc-img" >
         <h1 class="tit" >O MELHOR PARA O SEU<br>
         PET ESTÁ AQUI!</h1>
     </section>
-
 
     <section class="d-flex bc-green " >
 
@@ -87,7 +86,7 @@
 
     <section class="section-agendamento">
         <h2 class="tit2">Agende uma consulta!</h2>
-        <form action="{{ url_for('agendamentos') }}" method="post">
+        <form action="{{ url_for('agendar_consulta') }}" method="post">
             <div class="agendamento">
                 <label>Seu Nome:</label>
                 <input name="nome" type="text" />
